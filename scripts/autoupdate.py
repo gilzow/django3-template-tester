@@ -74,7 +74,7 @@ def main():
 									  stderr=subprocess.PIPE)
 		output, error = procUpdate.communicate()
 		if 0 != procUpdate.returncode:
-			outputError(action['command'], error)
+			return outputError(action['command'], error)
 		# now let's see if we have updates
 		output = error = None
 		logging.info("Seeing if there are any updates to commit.")
