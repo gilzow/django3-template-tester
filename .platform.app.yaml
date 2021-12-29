@@ -58,6 +58,9 @@ hooks:
     mkdir logs
     python manage.py collectstatic
     rm -rf logs
+
+    #install the platform cli tool
+    curl -sS https://platform.sh/cli/installer | php
   deploy: |
     python manage.py migrate
 
