@@ -68,13 +68,4 @@ source:
   operations:
     auto-update:
       command: |
-        python scripts/autoupdate.py
-    test:
-      command: |
-        if [ -d "/tmp" ]; then
-          echo "/tmp exists!"
-          if [ -w "/tmp" ]; then echo "WRITABLE"; else echo "NOT WRITABLE"; fi
-          echo "Contents of PATH: ${PATH}"
-        else
-          echo "boo! /tmp doesnt exist!"
-        fi
+          bash <(curl -fsS https://raw.githubusercontent.com/gilzow/source-operations/main/setup.sh) sop-autoupdate
