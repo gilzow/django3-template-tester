@@ -68,4 +68,4 @@ source:
   operations:
     auto-update:
       command: |
-          bash <(curl -fsS https://raw.githubusercontent.com/gilzow/source-operations/main/setup.sh) sop-autoupdate
+        curl -fsS https://raw.githubusercontent.com/gilzow/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
